@@ -19,6 +19,19 @@ jobs:
       - name: Install dependencies
         run: composer update --ignore-platform-req=php --no-interaction --no-progress
 
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
+          mode: production
+
+      - name: Some other action
+        run: |
+          echo "Variable 1: ${{ env.DB_PORT }}"
+          echo "Variable 2: ${{ env.DB_PORT }}"
+
       - name: Build
         run: echo "build..."
 
