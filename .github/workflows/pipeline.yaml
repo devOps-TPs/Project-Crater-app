@@ -1,0 +1,20 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install
+
+        run: echo "install..."
+
+      - name: Build
+        run: echo "build..."
+
+      - name: Test
+        run: echo "test..."
+
+      - name: Deploy
+        run: echo "deploy..."
