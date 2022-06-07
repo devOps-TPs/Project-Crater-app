@@ -25,15 +25,12 @@ jobs:
       - name: Load .env file
         uses: xom9ikk/dotenv@v1.0.2
         with:
-          mode: production
+          mode: build
 
-      - name: Some other action
+      - name: Build the docker-compose stack
         run: |
-          echo "Variable 1: ${{ env.DB_PORT }}"
-          echo "Variable 2: ${{ env.DB_PORT }}"
-
-      - name: Build
-        run: echo "build..."
+          docker-compose up -d
+          docker ps -a
 
       - name: Test
         run: php ./vendor/bin/pest
