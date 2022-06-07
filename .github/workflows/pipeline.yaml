@@ -1,8 +1,8 @@
 name: CI-pipeline
-  on:
-    push:
-      branches:
-        - master
+on:
+  push:
+    branches:
+      - master
 jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
