@@ -48,3 +48,4 @@ jobs:
           push: true
           target: alexpdv/projet_dev_ops:latest
           tags: latest
+          dockerfile: Dockerfile
