@@ -8,7 +8,7 @@ services:
         uid: 1000
       context: ./
       dockerfile: Dockerfile
-    image: alexpdv/app:latest
+    image: app
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
@@ -18,8 +18,7 @@ services:
       - crater
 
   db:
-    command: login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-    image: alexpdv/mariadb:latest
+    image: mariadb:latest
     restart: always
     volumes:
       - db:/var/lib/mysql
@@ -37,7 +36,7 @@ services:
       - crater
 
   nginx:
-    image: alexpdv/nginx:1.17-alpine
+    image: nginx:1.17-alpine
     restart: unless-stopped
     ports:
       - 80:80
