@@ -8,7 +8,7 @@ services:
         uid: 1000
       context: ./
       dockerfile: Dockerfile
-    image: crater-php
+    image: alexpdv/app:latest
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
@@ -18,7 +18,7 @@ services:
       - crater
 
   db:
-    image: mariadb
+    image: alexpdv/mariadb:latest
     restart: always
     volumes:
       - db:/var/lib/mysql
@@ -36,7 +36,7 @@ services:
       - crater
 
   nginx:
-    image: nginx:1.17-alpine
+    image: alexpdv/nginx:1.17-alpine
     restart: unless-stopped
     ports:
       - 80:80
