@@ -47,3 +47,4 @@ jobs:
         with:
           push: true
           target: alexpdv/projet_dev_ops:latest
+          tags: latest
