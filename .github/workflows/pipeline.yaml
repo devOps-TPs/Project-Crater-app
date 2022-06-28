@@ -49,5 +49,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          dockerfile: Dockerfile
           tags: alexpdv/projet_dev_ops:latest
