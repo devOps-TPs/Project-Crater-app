@@ -42,8 +42,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Deploy
-        uses: docker/build-push-action@v3
-        with :
-          repository: alexpdv/projet_dev_ops
-          dockerfile: Dockerfile
-          tags: latest
+        run: docker compose push
