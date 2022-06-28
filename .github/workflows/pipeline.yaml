@@ -49,4 +49,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
+          build-args: |
+            user=crater-user
+            uid=1000
           tags: alexpdv/projet_dev_ops:latest
