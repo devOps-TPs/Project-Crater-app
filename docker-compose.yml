@@ -18,7 +18,7 @@ services:
       - crater
 
   db:
-    command: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+    command: login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     image: alexpdv/mariadb:latest
     restart: always
     volumes:
